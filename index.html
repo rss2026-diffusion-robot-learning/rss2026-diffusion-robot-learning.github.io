@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffusion for Robot Learning | RSS 2026 Workshop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+
+        /* Hero Background Image Settings */
+        .hero-bg {
+            /* Using the specific RSS 2026 image provided */
+            background-image: linear-gradient(rgba(16, 75, 235, 0.85), rgba(15, 23, 42, 0.9)), url('images/RSS2026-logo.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* .speaker-card img { filter: grayscale(100%); transition: filter 0.3s; }
+        .speaker-card:hover img { filter: grayscale(0%); } */
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 pt-16">
+
+<nav class="fixed top-0 w-full z-50 bg-[#104beb] shadow-lg transition-all duration-300">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="flex h-16 items-center">
+            
+            <div class="flex-shrink-0 flex items-center mr-10">
+                <a href="#">
+                    <img src="https://roboticsconference.org/images/RSS2026-logo.png" alt="RSS 2026 Logo" class="h-12 w-auto object-contain">
+                </a>
+            </div>
+
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#vision" class="text-white hover:text-blue-200 font-semibold transition duration-150">Vision</a>
+                <a href="#topics" class="text-white hover:text-blue-200 font-semibold transition duration-150">Topics</a>
+                <a href="#speakers" class="text-white hover:text-blue-200 font-semibold transition duration-150">Speakers</a>
+                <a href="#schedule" class="text-white hover:text-blue-200 font-semibold transition duration-150">Schedule</a>
+                <a href="#cfp" class="text-white hover:text-blue-200 font-semibold transition duration-150">Call for Papers</a>
+                <a href="#organizers" class="text-white hover:text-blue-200 font-semibold transition duration-150">Organizers</a>
+            </div>
+
+            <div class="md:hidden ml-auto">
+                <button class="text-white hover:text-blue-200 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <header class="hero-bg text-white py-24 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight drop-shadow-lg">Diffusion for Robot Learning</h1>
+        <h2 class="text-2xl md:text-3xl font-light mb-8 text-slate-200 drop-shadow-md">From Generation to Action</h2>
+        <div class="flex justify-center flex-wrap gap-4 text-lg">
+            <span class="bg-white/10 px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">RSS 2026 Workshop</span>
+            <span class="bg-white/10 px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">Sydney, Australia</span>
+            <span class="bg-white/10 px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">July 13 or 17, 2026</span>
+        </div>
+    </header>
+
+    <section id="vision" class="max-w-4xl mx-auto py-20 px-6">
+        <h3 class="text-3xl font-bold mb-6 border-b-2 border-slate-200 pb-2 text-slate-800">Vision</h3>
+        <div class="text-lg text-gray-700 leading-relaxed space-y-4">
+            <p>
+                Diffusion has established itself as a dominant learning and generation paradigm, emerging as a powerful alternative to autoregressive schemes. While its impact on image and video synthesis is well-established, its potential to reshape robot learning is vast. We believe the robot learning community is currently entering a more embracing phase for diffusion methods, where they serve as a foundation for both high-fidelity data generation and intelligent control.
+            </p>
+            <!-- <p>
+                On the data side, large-scale pretrained diffusion models act as an abundant source of prior knowledge. They can synthesize high-fidelity human motions and hand poses, or serve as competent "World Models" that imagine robot-environment interactions. On the algorithmic side, diffusion-based policies have already set new standards for expressivity and multi-modality in imitation learning. Furthermore, in the large-scale data domain, discrete-diffusion methods are promising backbones for next-generation Vision-Language-Action (VLA) models. How to effectively pretrain and fine-tune these models to enable generalizable, long-horizon, and language-conditioned execution remains a critical research frontier.
+            </p> -->
+            <p>
+                This workshop aims to aggregate recent advances in diffusion modeling into trackable robotics capabilities and pinpoint the most promising future directions for the community, standing at the intersection of generative AI and physical intelligence.
+            </p>
+        </div>
+    </section>
+
+    <section id="topics" class="bg-white py-20 px-6 border-y border-gray-100">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl font-bold mb-10 text-slate-800">Topics of Interest</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition bg-gray-50">
+                    <h4 class="font-bold text-blue-600 mb-2">Diffusion as a Policy</h4>
+                    <p class="text-sm text-gray-600">Data-efficient and scalable training for generalizable policies.</p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition bg-gray-50">
+                    <h4 class="font-bold text-blue-600 mb-2">Steering Policies</h4>
+                    <p class="text-sm text-gray-600">Gradient-based and classifier-free guidance for goal-reaching.</p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition bg-gray-50">
+                    <h4 class="font-bold text-blue-600 mb-2">Diffusion for VLA</h4>
+                    <p class="text-sm text-gray-600">Integrating diffusion into Vision-Language-Action models.</p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition bg-gray-50">
+                    <h4 class="font-bold text-blue-600 mb-2">Dynamics of Denoising</h4>
+                    <p class="text-sm text-gray-600">Analyzing the iterative action formation process.</p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition bg-gray-50">
+                    <h4 class="font-bold text-blue-600 mb-2">Accelerating Inference</h4>
+                    <p class="text-sm text-gray-600">Few-step diffusion, Consistency Models, and Flow Matching.</p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition bg-gray-50">
+                    <h4 class="font-bold text-blue-600 mb-2">World Models</h4>
+                    <p class="text-sm text-gray-600">Semantic physics knowledge from large video models.</p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition bg-gray-50 md:col-span-2 lg:col-span-3">
+                    <h4 class="font-bold text-blue-600 mb-2">Motion Synthesis</h4>
+                    <p class="text-sm text-gray-600">Diffusion-based generation of high-fidelity human/hand poses to solve data scarcity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers" class="max-w-6xl mx-auto py-20 px-6">
+        <h3 class="text-3xl font-bold mb-12 text-center text-slate-800">Invited Speakers</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
+            
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/li_yi.jpg" alt="Li Yi" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Li Yi</h4>
+                <p class="text-sm text-blue-600 font-medium">Tsinghua University</p>
+            </div>
+
+            <!-- <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/russ_tedrake.jpg" alt="Russ Tedrake" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Russ Tedrake</h4>
+                <p class="text-sm text-blue-600 font-medium">MIT / TRI</p>
+            </div> -->
+
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/c_karen_liu.jpg" alt="C. Karen Liu" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">C. Karen Liu</h4>
+                <p class="text-sm text-blue-600 font-medium">Stanford University</p>
+            </div>
+
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/sergey_levine.jpg" alt="Sergey Levine" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Sergey Levine</h4>
+                <p class="text-sm text-blue-600 font-medium">UC Berkeley / Physical Intelligence</p>
+            </div>
+
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/yilun_du.png" alt="Yilun Du" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Yilun Du</h4>
+                <p class="text-sm text-blue-600 font-medium">Harvard University</p>
+            </div>
+
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/edward_johns.jpg" alt="Edward Johns" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Edward Johns</h4>
+                <p class="text-sm text-blue-600 font-medium">Imperial College London</p>
+            </div>
+
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/danfei_xu.jpg" alt="Danfei Xu" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Danfei Xu</h4>
+                <p class="text-sm text-blue-600 font-medium">Georgia Tech</p>
+            </div>
+
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/oier_mees.jpg" alt="Oier Mees" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Oier Mees</h4>
+                <p class="text-sm text-blue-600 font-medium">Microsoft / ETH</p>
+            </div>
+            
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/max_simchowitz.png" alt="Max Simchowitz" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Max Simchowitz</h4>
+                <p class="text-sm text-blue-600 font-medium">CMU</p>
+            </div>
+            <div class="speaker-card text-center group">
+                <div class="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img src="images/ian_manchester.png" alt="Ian Manchester" class="w-full h-full object-cover">
+                </div>
+                <h4 class="font-bold text-lg text-gray-900">Ian Manchester</h4>
+                <p class="text-sm text-blue-600 font-medium">Sydney University</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="bg-gray-50 py-20 px-6 border-y border-gray-200">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-slate-800">Workshop Schedule (Tentative)</h3>
+            <div class="bg-white shadow overflow-hidden rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider w-32">Time</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Event</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Speaker(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">08:00 - 08:05</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Opening Remarks</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Organizers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">08:05 - 09:05</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Keynote 1-3, Diffusion as Policy</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">TBD</td>
+                        </tr>
+                        <tr class="bg-blue-50/50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">09:05 - 09:30</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-semibold">Coffee Break & Poster Session</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">09:30 - 10:25</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Keynote 4-6, Diffusion for VLA</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">TBD</td>
+                        </tr>
+                        <tr class="bg-blue-50/50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">10:25 - 10:55</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-semibold">Spotlight Talks</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">10:55 - 11:55</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Keynote 7-9, Diffusion as World Model</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">TBD</td>
+                        </tr>
+                         <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">11:55 - 12:00</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Closing Remarks & Awards</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Organizers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="cfp" class="bg-white py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-slate-800 border-b-2 border-slate-100 pb-2">Call for Papers</h3>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2">
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        We welcome submissions that explore the intersection of generative modeling and physical intelligence, ranging from theoretical foundations to large-scale robotic deployments.
+                    </p>
+                    
+                    <h4 class="font-bold text-xl mb-4 text-slate-800">Submission Guidelines</h4>
+                    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-8">
+                        <li><strong>Paper Length:</strong> 4 to 8 pages (excluding references and supplementary material).</li>
+                        <li><strong>Format:</strong> Submissions must follow the <a href="https://roboticsconference.org/information/authorinfo/" class="text-blue-600 hover:underline">RSS paper template</a>.</li>
+                        <li><strong>Review Process:</strong> Peer review will be <strong>single-blind</strong>.</li>
+                        <li><strong>Dual Submissions:</strong> As a non-archival venue, we welcome submissions of work that is currently under review or has been recently accepted/published at other venues.</li>
+                    </ul>
+
+                    <h4 class="font-bold text-xl mb-4 text-slate-800">Presentation & Awards</h4>
+                    <p class="text-gray-700 mb-6">
+                        All accepted papers will be presented during an <strong>on-site poster session</strong>. A subset of high-quality submissions will be selected for <strong>5-min spotlight talks</strong>. During the closing remarks, we will announce the <strong>Best Paper Award</strong>. Accepted papers will also be made available on the workshop website.
+                    </p>
+
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 h-fit">
+                    <h4 class="font-bold text-lg mb-4 text-slate-900">Important Dates</h4>
+                    <div class="space-y-4 mb-8">
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Submission Deadline</p>
+                            <p class="font-bold text-slate-800">TBA (AOE)</p>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Notification</p>
+                            <p class="font-bold text-slate-800">TBA (AOE)</p>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Workshop Date</p>
+                            <p class="font-bold text-slate-800">July 13 or 17, 2026</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-lg mb-2 text-slate-900">Location</h4>
+                    <p class="text-gray-600 mb-8 italic">To be announced</p>
+
+                    <a href="#" class="block w-full bg-[#104beb] hover:bg-blue-700 text-white text-center py-3 rounded-lg font-bold transition shadow-md">
+                        Submit via OpenReview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="organizers" class="max-w-5xl mx-auto py-20 px-6 border-t border-gray-100">
+        <h3 class="text-3xl font-bold mb-12 text-slate-800 text-center">Organizing Committee</h3>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
+            
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/kaizhe_hu.jpg" alt="Kaizhe Hu" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Kaizhe Hu</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">Tsinghua University</p>
+            </div>
+
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/xiaomeng_xu.jpg" alt="Xiaomeng Xu" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Xiaomeng Xu</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">Stanford University</p>
+            </div>
+
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/haoyu_xiong.jpg" alt="Haoyu Xiong" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Haoyu Xiong</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">MIT</p>
+            </div>
+
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/takara_truong.jpg" alt="Takara Truong" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Takara Truong</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">Stanford University</p>
+            </div>
+
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/brent_yi.jpg" alt="Brent Yi" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Brent Yi</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">UC Berkeley</p>
+            </div>
+
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/mitsuhiko_nakamoto.jpg" alt="Mitsuhiko Nakamoto" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Mitsuhiko Nakamoto</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">UC Berkeley</p>
+            </div>
+
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/utkarsh_mishra.jpg" alt="Utkarsh A. Mishra" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Utkarsh A. Mishra</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">Georgia Tech</p>
+            </div>
+
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/shuran_song.jpg" alt="Shuran Song" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Shuran Song</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">Stanford University</p>
+            </div>
+
+            <div class="text-center group">
+                <div class="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4 overflow-hidden shadow-md border border-gray-100">
+                    <img src="images/huazhe_xu.png" alt="Huazhe Xu" class="w-full h-full object-cover">
+                </div>
+                <h5 class="font-bold text-gray-900">Huazhe Xu</h5>
+                <p class="text-xs text-blue-600 font-medium uppercase tracking-wider">Tsinghua University</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm">
+        <div class="mb-2">
+            &copy; 2026 RSS Workshop on Diffusion for Robot Learning. All rights reserved.
+        </div>
+        <div class="text-slate-600 text-xs">
+            Template borrowed and modified from the <a href="https://hitl-robot-learning.github.io/" class="hover:text-slate-400 underline transition">HITL Robot Learning Workshop</a> website.
+        </div>
+    </footer>
+
+</body>
+</html>
